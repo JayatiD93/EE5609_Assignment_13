@@ -213,39 +213,27 @@ T^2 - (a+d)T + (ad-bc)I = 0
 \end{align}
 \section{Explanation}
 Here $T$ is a linear operator on $V$ and $B$ is an ordered basis of $V$.
-Now, consider the transform $(T^2 - (a+d)T + (ad-bc)I)$ with respect to basis $B$:
-\begin{align}
-[T^2 - (a+d)T + (ad-bc)I]_B \\
-=[T^2]_B - [(a+d)T]_B + [(ad-bc)I]_B\\
-=[T T]_B - (a+d)[T]_B + (ad-bc)I_B\\
-= [T]_B [T]_B - (a+d)[T]_B + (ad-bc)I
-\end{align}
-Now,if $U$ and $T$ are two linear operator on $V$ then $[UT]_B = [U]_B [T]_B$, and here $T$ is linear operator so $[T^2]_B = [T]_B [T]_B$.
+Let us consider $[T]_B = A$, so $A = \myvec{a & b\\c & d}$.
 
-Now, 
+Now, the characteristic equation of $A$ is:
 \begin{align}
-([T]_B)^2 = \myvec{a & b\\c & d} \myvec{a & b\\c & d}\\
-\implies ([T]_B)^2 = \myvec{a^2 + bc & ab+bd\\ac+dc & bc+d^2}
+\mydet{A-\lambda I}=0\\
+\implies \mydet{a-\lambda & b\\c & d-\lambda}=0\\
+\implies \lambda^2 - (a+d)\lambda + (ad-bc)=0
 \end{align}
-\begin{align}
-(a+d)[T]_B = (a+d)\myvec{a & b\\c & d}\\
-\textbf{or,}(a+d)[T]_B = \myvec{a(a+d) & b(a+d)\\c(a+d) & d(a+d)}
-\end{align}
-\begin{align}
-(ad-bc)I = (ad-bc)\myvec{1 & 0\\0 & 1}\\
-\textbf{or,}(ad-bc)I = \myvec{(ad-bc) & 0\\0 & (ad-bc)}
-\end{align}
+According to the Cayley-Hamilton's Theorem, every square matrix satisfies its own characteristic equation. Here $A$ is a 2x2 square matrix, so it should also satisfy its characteristic equation.
+
 Now,
-\begin{multline}
-[T]_B [T]_B - (a+d)[T]_B + (ad-bc)I\\
-= \myvec{a^2 + bc & ab+bd\\ac+dc & bc+d^2} \\
-- \myvec{a(a+d) & b(a+d)\\c(a+d) & d(a+d)} +\myvec{(ad-bc) & 0\\0 & (ad-bc)}\\
-=  \myvec{0 & 0\\0 & 0}
-\end{multline}
-So,
 \begin{align}
-[T^2 - (a+d)T + (ad-bc)I]_B = \myvec{0 & 0\\0 & 0}_B\\
-\implies T^2 - (a+d)T + (ad-bc)I = 0
+\lambda^2 - (a+d)\lambda + (ad-bc)=0\\
+\implies A^2 - (a+d)A + (ad-bc)I=0
+\label{eqn:1}
+\end{align}
+
+We can also write the equation \ref{eqn:1} as:
+\begin{align}
+[T]_B^2 - (a+d)[T]_B + (ad-bc)I=0\\
+\textbf{or,}T^2 - (a+d)T + (ad-bc)I=0
 \end{align}
 Hence, the above problem statement is proved.
 %\renewcommand{\theequation}{\theenumi}
